@@ -1,0 +1,11 @@
+{% extends 'product/product_basic.html' %}
+{% block content %}
+{% for product in products %}
+<div class="post">
+  <p class="date">created: {{product.created_at|date:'d-m-y'}}</p>
+  <h1> <a href="{% url 'product_detail' pk=product.pk %}">{{product.title}}</a> </h1>
+  <p>{{product.text|truncatechars:200}}</p>
+
+</div>
+{% endfor %}
+{% endblock %}

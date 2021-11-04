@@ -1,0 +1,22 @@
+{% extends 'basic.html' %}
+{% block content %}
+<nav class="navbar navbar-default techfont custom navbar">
+  <div class="container">
+     <ul class="nav navbar-nav">
+      {% if user.is_authenticated %}
+      <li> <a href="{% url 'post_new' %}">New Post</a> </li>
+      <li> <a href="{% url 'post_draft_list' %}">Post Drafts</a> </li>
+      
+      <li> <a href="{% url 'product_new' %}">New Product</a> </li>
+      <li> <a href="{% url 'product_draft_list' %}">Product Drafts</a> </li>
+
+      {% else %}
+      <li> <a class="nav navbar-right" href="{% url 'login'%}"> <span class="glyphicon glyphicon-user"></span></a></li> -->
+
+      {% endif %}
+
+    </ul>
+  </div>
+
+</nav>
+{% endblock %}
